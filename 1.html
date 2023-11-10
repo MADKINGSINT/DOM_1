@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Отслеживание изменения ориентации экрана</title>
+
+</head>
+
+<body>
+    <h1>Изменение ориентации экрана</h1>
+    <p id="message"></p>
+    ae
+    <script>
+        function handleOrientationChange() {
+            // Получаем текущую ориентацию экрана
+        
+            const width = window.innerWidth
+            const height = window.innerHeight
+           
+
+            // Выводим сообщение о текущей ориентации экрана
+            if (width<height) {
+                messageElement.textContent = "Вы находитесь в портретной ориентации";
+            } else if (width>height) {
+                messageElement.textContent = "Вы находитесь в ландшафтной ориентации";
+            }
+        }
+
+        // Обрабатываем событие изменения ориентации экрана
+        window.addEventListener("resize", handleOrientationChange, false);
+
+        // Вызываем функцию для инициализации сообщения о текущей ориентации экрана
+        handleOrientationChange();
+    </script>
+</body>
+
+</html>

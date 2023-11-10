@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Моя веб-форма</title>
+    <script type>
+        window.addEventListener('beforeunload', function (e) {
+            // Проверяем, есть ли данные в текстовом поле
+            if (document.getElementById('myText').value !== '') {
+                // Отображаем предупреждающее сообщение
+                e.preventDefault();
+                e.returnValue = '';
+            }
+        });
+    </script>
+    
+</head>
+
+<body>
+    <form>
+        <label for="myText">Введите текст:</label>
+        <input type="text" id="myText" name="myText">
+        <br><br>
+        <input type="submit" value="Отправить">
+    </form>
+</body>
+
+</html>
